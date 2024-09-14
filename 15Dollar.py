@@ -26,9 +26,9 @@ def insert_into_template(template_id, amount):
         response = requests.post(API_URL.format(template_id=template_id), headers=headers, data=json.dumps(payload))
 
         if response.status_code == 200:
-            print(f"Success: ${amount} inserted into Canva template.")
+            print("Success: ${amount} inserted into Canva template.")
         else:
-            print(f"Error: Unable to update template. Status code: {response.status_code}")
+            print("Error: Unable to update template. Status code: {response.status_code}")
             print("Response:", response.text)
 
     except requests.exceptions.RequestException as e:
